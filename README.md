@@ -342,6 +342,25 @@ COMMAND_INJECTION_PATTERNS = [
 
 ---
 
+## Open-Source WAF Configuration
+
+This project also includes a basic configuration for an open-source WAF using ModSecurity and Nginx.
+
+Location:
+
+
+open-source-waf-config/
+
+
+Contents:
+
+- modsecurity.conf → Core ModSecurity configuration
+- nginx_modsecurity.conf → Nginx reverse proxy configuration with ModSecurity
+- custom-strict-rules.conf → Custom security rules for SQL Injection, XSS, Path Traversal
+
+These files demonstrate how a traditional WAF can be configured and compared with the custom Python-based WAF.
+
+
 ##  Testing & Validation
 
 ### Test 1: SQL Injection
