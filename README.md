@@ -48,39 +48,39 @@ A **lightweight and customizable Web Application Firewall (WAF)** built with Fas
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                    CLIENT / ATTACKER                        │
-│                  (Parrot OS, Burp Suite)                   │
+│                  (Parrot OS, Burp Suite)                    │
 └────────────────────────┬────────────────────────────────────┘
                          │ HTTP/HTTPS Requests
                          ▼
 ┌─────────────────────────────────────────────────────────────┐
-│           CUSTOM WAF (FastAPI - Port 8080)               │
-│                                                              │
-│  ┌───────────────────────────────────────────────────────┐ │
-│  │  Request Inspection Module                            │ │
-│  │  • SQL Injection Detection                            │ │
-│  │  • XSS (Cross-Site Scripting) Protection              │ │
-│  │  • Path Traversal Prevention                          │ │
-│  │  • Command Injection Detection                        │ │
-│  │  • Request Normalization                             │ │
-│  │  • Sensitive File Access Protection                  │ │
-│  │  • Rate Limiting (optional)                           │ │
-│  └───────────────────────────────────────────────────────┘ │
-│                         │                                    │
-│  ┌──────────────────────▼──────────────────────────────┐  │
-│  │  Logging & Alerting System                          │  │
-│  │  • File-based logging (JSON/Text)                   │  │
-│  │  • Request/Response tracking                        │  │
-│  │  • Threat Level Classification                      │  │
-│  │  • Real-time Alerts                                 │  │
-│  └─────────────────────────────────────────────────────┘  │
+│           CUSTOM WAF (FastAPI - Port 8080)                  │
+│                                                             │
+│  ┌───────────────────────────────────────────────────────┐  │
+│  │  Request Inspection Module                            │  │
+│  │  • SQL Injection Detection                            │  │
+│  │  • XSS (Cross-Site Scripting) Protection              │  │
+│  │  • Path Traversal Prevention                          │  │
+│  │  • Command Injection Detection                        │  │
+│  │  • Request Normalization                              │  │
+│  │  • Sensitive File Access Protection                   │  │
+│  │  • Rate Limiting (optional)                           │  │
+│  └───────────────────────────────────────────────────────┘  │
+│                         │                                   │
+│  ┌──────────────────────▼──────────────────────────────┐    │
+│  │  Logging & Alerting System                          │    │
+│  │  • File-based logging (JSON/Text)                   │    │
+│  │  • Request/Response tracking                        │    │
+│  │  • Threat Level Classification                      │    │
+│  │  • Real-time Alerts                                 │    │
+│  └─────────────────────────────────────────────────────┘    │
 └────────────────────────┬────────────────────────────────────┘
                          │ Forwarded Requests (Safe)
                          ▼
 ┌─────────────────────────────────────────────────────────────┐
 │      TARGET APPLICATION (OWASP Juice Shop - Port 3000)      │
-│                                                              │
+│                                                             │
 │  Node.js Express Backend                                    │
-│  Intentionally Vulnerable Web Application                  │
+│  Intentionally Vulnerable Web Application                   │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -177,14 +177,14 @@ git --version
 
 ##  Installation
 
-### 1⃣ Clone the Repository
+### 1 Clone the Repository
 
 ```bash
-git clone https://github.com/AdamBelbaraka/Web-Application-Firewall-Custom-One.git
+git clone https://github.com/AdamBelbaraka/Web-Application-Firewall-Custom-One-.git
 cd Web-Application-Firewall---Custom-One-
 ```
 
-### 2⃣ Create Virtual Environment
+### 2 Create Virtual Environment
 
 ```bash
 # Linux / macOS
@@ -200,7 +200,7 @@ python -m venv venv
 venv\Scripts\Activate.ps1
 ```
 
-### 3⃣ Install Dependencies
+### 3 Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -216,7 +216,7 @@ python-dotenv==1.0.0
 pydantic==2.5.0
 ```
 
-### 4⃣ Configuration (Optional)
+### 4 Configuration (Optional)
 
 Create a `.env` file in the project root:
 
@@ -501,15 +501,15 @@ echo "Allowed: $(grep 'blocked.*false' logs/waf.log | wc -l)"
 #!/bin/bash
 # Simple log dashboard (run periodically)
 
-echo "=== WAF Statistics ==="
+echo " WAF Statistics "
 echo "Total Requests: $(wc -l < logs/waf.log)"
 echo "Attacks Blocked: $(grep 'blocked.*true' logs/waf.log | wc -l)"
 echo "Success Rate: $(echo "scale=2; $(grep 'blocked.*false' logs/waf.log | wc -l) * 100 / $(wc -l < logs/waf.log)" | bc)%"
 echo ""
-echo "=== Top Threats ==="
+echo " Top Threats "
 grep "threat_type" logs/waf.log | cut -d'"' -f4 | sort | uniq -c | sort -rn | head -5
 echo ""
-echo "=== Top Attacking IPs ==="
+echo " Top Attacking IPs "
 grep "client_ip" logs/waf.log | cut -d'"' -f4 | sort | uniq -c | sort -rn | head -5
 ```
 
@@ -932,7 +932,6 @@ copies or substantial portions of the Software.
 **Adam Belbaraka**
 
 - **GitHub:** [@AdamBelbaraka](https://github.com/AdamBelbaraka)
-- **Email:** adam.belbaraka@example.com
 - **Specialization:** Cybersecurity & Penetration Testing
 - **Location:** Morocco 🇲🇦
 - **Interests:** Offensive security, red teaming, WAF evasion, CTFs
@@ -945,7 +944,7 @@ copies or substantial portions of the Software.
 - FastAPI developers for the excellent framework
 - PortSwigger for comprehensive security academy
 - The information security community for knowledge sharing
-- All contributors and testers
+- My Professor Mohy-Eddine Mouad
 
 ---
 
@@ -971,9 +970,6 @@ If this project helped you learn about WAF or cybersecurity, please consider:
 | **Security** | Email | 24 hours |
 | **Contributions** | Pull Request Review | 48-72 hours |
 
-### Report Security Issues
-
-If you find a security vulnerability, please email `adam.belbaraka@example.com` instead of opening a public issue.
 
 ---
 
