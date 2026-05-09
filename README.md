@@ -2,7 +2,6 @@
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100%2B-green)](https://fastapi.tiangolo.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Active%20Development-brightgreen)]()
 
 A **lightweight and customizable Web Application Firewall (WAF)** built with FastAPI, acting as a reverse proxy to protect web applications against common attacks (SQL Injection, XSS, Path Traversal, Command Injection, and more).
