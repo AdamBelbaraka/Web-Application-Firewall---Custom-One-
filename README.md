@@ -925,8 +925,6 @@ test: Add comprehensive XSS payload test cases
 
 ##  License
 
-This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
-
 ```
 MIT License
 
